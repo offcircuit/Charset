@@ -1,6 +1,6 @@
 uint8_t sift(uint8_t character, uint8_t row) {
-
-  switch (uint16_t(row << 8) | character) {
+  uint16_t y = uint16_t(row << 8) | character;
+  switch (y) {
 
     case 0x033: case 0x035: case 0x037: case 0x045: case 0x046: case 0x054: case 0x05A:
     case 0x223: case 0x23D: case 0x27A:
@@ -132,7 +132,7 @@ uint8_t sift(uint8_t character, uint8_t row) {
     case 0x272:
       return 0b01011;
 
-    case 0x022: case 0x023: 
+    case 0x022: case 0x023:
     case 0x122: case 0x123: case 0x15E:
     case 0x222: case 0x234: case 0x258: case 0x259:
     case 0x323: case 0x36B:
@@ -197,17 +197,16 @@ uint8_t sift(uint8_t character, uint8_t row) {
     case 0x628: case 0x634: case 0x63C: case 0x63F: case 0x674:
       return 0b00010;
 
-    default: switch (uint16_t(row << 8) | character) {
-        case 0x064:
-        case 0x12F: case 0x137: case 0x15A: case 0x164:
-        case 0x232: case 0x23F: case 0x240:
-        case 0x335: case 0x33E: case 0x33F: case 0x361:
-        case 0x433: case 0x435: case 0x439: case 0x453:
-        case 0x553: case 0x55C: case 0x567: case 0x571: case 0x573:
-        case 0x671:
-          return 0b00001;
 
-        default: return 0b00000;
-      }
+    default:
+      return !(
+               (y ^ 0x064) &&
+               (y ^ 0x12F) && (y ^ 0x137) && (y ^ 0x15A) && (y ^ 0x164) &&
+               (y ^ 0x232) && (y ^ 0x23F) && (y ^ 0x240) &&
+               (y ^ 0x335) && (y ^ 0x33E) && (y ^ 0x33F) && (y ^ 0x361) &&
+               (y ^ 0x433) && (y ^ 0x435) && (y ^ 0x439) && (y ^ 0x453) &&
+               (y ^ 0x553) && (y ^ 0x55C) && (y ^ 0x567) && (y ^ 0x571) && (y ^ 0x573) &&
+               (y ^ 0x671)
+             );
   }
 };
