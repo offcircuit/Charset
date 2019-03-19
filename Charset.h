@@ -1,6 +1,7 @@
 uint8_t sift(uint8_t character, uint8_t row) {
-  uint16_t y = uint16_t(row << 8) | character;
-  switch (y) {
+  uint16_t bitset = uint16_t(row << 8) | character;
+  
+  switch (bitset) {
 
     case 0x033: case 0x035: case 0x037: case 0x045: case 0x046: case 0x054: case 0x05A:
     case 0x223: case 0x23D: case 0x27A:
@@ -200,13 +201,13 @@ uint8_t sift(uint8_t character, uint8_t row) {
 
     default:
       return !(
-               (y ^ 0x064) &&
-               (y ^ 0x12F) && (y ^ 0x137) && (y ^ 0x15A) && (y ^ 0x164) &&
-               (y ^ 0x232) && (y ^ 0x23F) && (y ^ 0x240) &&
-               (y ^ 0x335) && (y ^ 0x33E) && (y ^ 0x33F) && (y ^ 0x361) &&
-               (y ^ 0x433) && (y ^ 0x435) && (y ^ 0x439) && (y ^ 0x453) &&
-               (y ^ 0x553) && (y ^ 0x55C) && (y ^ 0x567) && (y ^ 0x571) && (y ^ 0x573) &&
-               (y ^ 0x671)
+               (bitset ^ 0x064) &&
+               (bitset ^ 0x12F) && (bitset ^ 0x137) && (bitset ^ 0x15A) && (bitset ^ 0x164) &&
+               (bitset ^ 0x232) && (bitset ^ 0x23F) && (bitset ^ 0x240) &&
+               (bitset ^ 0x335) && (bitset ^ 0x33E) && (bitset ^ 0x33F) && (bitset ^ 0x361) &&
+               (bitset ^ 0x433) && (bitset ^ 0x435) && (bitset ^ 0x439) && (bitset ^ 0x453) &&
+               (bitset ^ 0x553) && (bitset ^ 0x55C) && (bitset ^ 0x567) && (bitset ^ 0x571) && (bitset ^ 0x573) &&
+               (bitset ^ 0x671)
              );
   }
 };
