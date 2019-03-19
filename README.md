@@ -1,5 +1,5 @@
 # Morse
-Morse class
+Charset function (sift)
 
 # TESTED ON
 
