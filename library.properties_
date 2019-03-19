@@ -1,0 +1,9 @@
+name=Charset
+version=1.0.0
+author=Helder Rodrigues
+maintainer=Helder Rodrigues
+sentence=Charset library for Arduino
+paragraph=A char set
+category=Display
+url=https://github.com/offcircuit/Charset
+architectures=*
