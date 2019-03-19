@@ -1,4 +1,4 @@
-# Morse
+# Charset
 Charset function (sift)
 
 # TESTED ON
