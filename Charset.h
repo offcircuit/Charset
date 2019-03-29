@@ -199,7 +199,6 @@ uint8_t sift(uint8_t character, uint8_t row) {
     case 0x628: case 0x634: case 0x63C: case 0x63F: case 0x674:
       return 0b00010;
 
-
     default:
       return !(
                (bitset ^ 0x064) &&
