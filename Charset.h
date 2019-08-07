@@ -1,4 +1,4 @@
-uint8_t sift uint8_t character, uint8_t row) {
+uint8_t sift (uint8_t character, uint8_t row) {
   uint16_t bitset = uint16_t(row << 8) | character;
 
   if (!(
@@ -6,10 +6,10 @@ uint8_t sift uint8_t character, uint8_t row) {
         (bitset ^ 0x133) && (bitset ^ 0x14A) && (bitset ^ 0x15D) &&
         (bitset ^ 0x225) && (bitset ^ 0x227) && (bitset ^ 0x229) && (bitset ^ 0x22F) && (bitset ^ 0x237) && (bitset ^ 0x23E) && (bitset ^ 0x24A) && (bitset ^ 0x25A) && (bitset ^ 0x25D) &&
         (bitset ^ 0x26A) &&
-        (bitset ^ 0x329) && (bitset ^ 0x332) && (bitset ^ 0x333) && (bitset ^ 0x34A) && (bitset ^ 0x35D) && (bitset ^ 0x36A) && (bitset ^ 0x37A) && (bitset ^ 0x37D) &&
-        (bitset ^ 0x429) && (bitset ^ 0x43E) && (bitset ^ 0x43F) && (bitset ^ 0x44A) && (bitset ^ 0x45C) && (bitset ^ 0x45D) && (bitset ^ 0x46A) &&
+        (bitset ^ 0x329) && (bitset ^ 0x332) && (bitset ^ 0x333) && (bitset ^ 0x33F) && (bitset ^ 0x34A) && (bitset ^ 0x35D) && (bitset ^ 0x36A) && (bitset ^ 0x37A) && (bitset ^ 0x37D) &&
+        (bitset ^ 0x429) && (bitset ^ 0x43E) && (bitset ^ 0x44A) && (bitset ^ 0x45C) && (bitset ^ 0x45D) && (bitset ^ 0x46A) &&
         (bitset ^ 0x534) && (bitset ^ 0x539) && (bitset ^ 0x55D) &&
-        (bitset ^ 0x628) && (bitset ^ 0x634) && (bitset ^ 0x63C) && (bitset ^ 0x63F) && (bitset ^ 0x674)
+        (bitset ^ 0x628) && (bitset ^ 0x634) && (bitset ^ 0x63C) && (bitset ^ 0x674)
       )) return 2;
 
   else if (!(
@@ -24,12 +24,13 @@ uint8_t sift uint8_t character, uint8_t row) {
              (bitset ^ 0x266) && (bitset ^ 0x26C) && (bitset ^ 0x27B) && (bitset ^ 0x27C) && (bitset ^ 0x27D) && (bitset ^ 0x321) && (bitset ^ 0x325) && (bitset ^ 0x32F) && (bitset ^ 0x331) &&
              (bitset ^ 0x337) && (bitset ^ 0x349) && (bitset ^ 0x354) && (bitset ^ 0x358) && (bitset ^ 0x359) && (bitset ^ 0x35A) && (bitset ^ 0x35C) && (bitset ^ 0x369) && (bitset ^ 0x36C) &&
              (bitset ^ 0x374) && (bitset ^ 0x37C) &&
-             (bitset ^ 0x421) && (bitset ^ 0x42B) && (bitset ^ 0x431) && (bitset ^ 0x432) && (bitset ^ 0x437) && (bitset ^ 0x449) && (bitset ^ 0x454) && (bitset ^ 0x459) && (bitset ^ 0x466) &&
-             (bitset ^ 0x469) && (bitset ^ 0x46C) && (bitset ^ 0x474) && (bitset ^ 0x478) && (bitset ^ 0x47A) && (bitset ^ 0x47B) && (bitset ^ 0x47C) && (bitset ^ 0x47D) &&
+             (bitset ^ 0x421) && (bitset ^ 0x42B) && (bitset ^ 0x431) && (bitset ^ 0x432) && (bitset ^ 0x437) && (bitset ^ 0x43F) && (bitset ^ 0x449) && (bitset ^ 0x454) && (bitset ^ 0x459) && 
+             (bitset ^ 0x466) && (bitset ^ 0x469) && (bitset ^ 0x46C) && (bitset ^ 0x474) && (bitset ^ 0x478) && (bitset ^ 0x47A) && (bitset ^ 0x47B) && (bitset ^ 0x47C) && (bitset ^ 0x47D) &&
              (bitset ^ 0x528) && (bitset ^ 0x529) && (bitset ^ 0x52A) && (bitset ^ 0x52B) && (bitset ^ 0x52C) && (bitset ^ 0x531) && (bitset ^ 0x537) && (bitset ^ 0x53B) && (bitset ^ 0x53C) &&
              (bitset ^ 0x53E) && (bitset ^ 0x549) && (bitset ^ 0x554) && (bitset ^ 0x559) && (bitset ^ 0x566) && (bitset ^ 0x569) && (bitset ^ 0x56C) && (bitset ^ 0x579) && (bitset ^ 0x57B) &&
              (bitset ^ 0x57C) && (bitset ^ 0x57D) &&
-             (bitset ^ 0x621) && (bitset ^ 0x624) && (bitset ^ 0x637) && (bitset ^ 0x654) && (bitset ^ 0x656) && (bitset ^ 0x659) && (bitset ^ 0x666) && (bitset ^ 0x676) && (bitset ^ 0x67C)
+             (bitset ^ 0x621) && (bitset ^ 0x624) && (bitset ^ 0x637) && (bitset ^ 0x63F) && (bitset ^ 0x654) && (bitset ^ 0x656) && (bitset ^ 0x659) && (bitset ^ 0x666) && (bitset ^ 0x676) && 
+             (bitset ^ 0x67C)
            )) return 4;
 
   else if (!(
@@ -89,6 +90,12 @@ uint8_t sift uint8_t character, uint8_t row) {
              (bitset ^ 0x52E) && (bitset ^ 0x53A) && (bitset ^ 0x578) &&
              (bitset ^ 0x62E) && (bitset ^ 0x639) && (bitset ^ 0x64A) && (bitset ^ 0x66A)
            )) return 12;
+
+  else if (!(
+             (bitset ^ 0x17E) &&
+             (bitset ^ 0x264) &&
+             (bitset ^ 0x626) && (bitset ^ 0x651) && (bitset ^ 0x675)
+           )) return 13;
 
   else if (!(
              (bitset ^ 0x030) && (bitset ^ 0x032) && (bitset ^ 0x038) && (bitset ^ 0x039) && (bitset ^ 0x03F) && (bitset ^ 0x040) && (bitset ^ 0x041) && (bitset ^ 0x043) && (bitset ^ 0x047) &&
@@ -225,7 +232,7 @@ uint8_t sift uint8_t character, uint8_t row) {
             (bitset ^ 0x064) &&
             (bitset ^ 0x12F) && (bitset ^ 0x137) && (bitset ^ 0x15A) && (bitset ^ 0x164) &&
             (bitset ^ 0x232) && (bitset ^ 0x23F) && (bitset ^ 0x240) &&
-            (bitset ^ 0x335) && (bitset ^ 0x33E) && (bitset ^ 0x33F) && (bitset ^ 0x361) &&
+            (bitset ^ 0x335) && (bitset ^ 0x33E) && (bitset ^ 0x361) &&
             (bitset ^ 0x433) && (bitset ^ 0x435) && (bitset ^ 0x439) && (bitset ^ 0x453) &&
             (bitset ^ 0x553) && (bitset ^ 0x55C) && (bitset ^ 0x567) && (bitset ^ 0x571) && (bitset ^ 0x573) &&
             (bitset ^ 0x671)
