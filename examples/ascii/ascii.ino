@@ -2,7 +2,7 @@
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   uint8_t items = 0;
   for (int8_t character = 32; character < 0x7F; character++) {
